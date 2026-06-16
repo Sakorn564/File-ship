@@ -841,9 +841,11 @@
                 if (employeeData.length > 0) {
                     saveToLocalStorage();
                     const noteEl = document.getElementById('uploadNote');
-                    noteEl.textContent = '✅ โหลดสำเร็จ: ' + employeeData.length + ' คน (' + file.name + ')';
+                    // แสดงตัวอย่าง Badge ID 3 คนแรก
+                    const sample = employeeData.slice(0,3).map(e => e.badgeId).join(', ');
+                    noteEl.textContent = '✅ โหลดสำเร็จ: ' + employeeData.length + ' คน (' + file.name + ') | ตัวอย่าง Badge: ' + sample;
                     noteEl.className = 'upload-note success';
-                    showToast('success', 'โหลดข้อมูลสำเร็จ! พบพนักงาน ' + employeeData.length + ' คน (Badge ID = Column A)');
+                    showToast('success', 'โหลดข้อมูลสำเร็จ! พบพนักงาน ' + employeeData.length + ' คน | Name Col=' + nameCol + ' Function Col=' + functionCol);
                 } else {
                     showToast('error', 'ไม่พบข้อมูลพนักงาน');
                 }
@@ -873,7 +875,23 @@
     }
 
     function normalizeBadgeId(v) {
-        return String(v||'').trim().replace(/\s+/g,'');
+        let s = String(v||'').trim().replace(/\s+/g,'');
+        // Handle number with decimals like "2943258038.0" → "2943258038"
+        if (s.includes('.')) {
+            const num = parseFloat(s);
+            if (!isNaN(num)) s = String(Math.round(num));
+        }
+        // Handle scientific notation like "2.94326E+09"
+        if (s.toLowerCase().includes('e')) {
+            const num = parseFloat(s);
+            if (!isNaN(num)) s = String(Math.round(num));
+        }
+        // ตัด leading zeros ที่เครื่องสแกน FC USB reader เพิ่มมา
+        // เช่น "00002943258038" → "2943258038"
+        s = s.replace(/^0+/, '');
+        // ถ้าตัดหมดแล้วเหลือว่าง (กรณี "0000") ให้เป็น "0"
+        if (s === '') s = '0';
+        return s;
     }
 
     // ===== SEARCH =====
@@ -1201,12 +1219,12 @@
 
     // ===== STORAGE =====
     function saveToLocalStorage() {
-        localStorage.setItem('chipRecords', JSON.stringify(records));
-        localStorage.setItem('employeeData3', JSON.stringify(employeeData));
+        localStorage.setItem('chipRecords2', JSON.stringify(records));
+        localStorage.setItem('employeeData4', JSON.stringify(employeeData));
     }
     function loadFromLocalStorage() {
-        const r = localStorage.getItem('chipRecords');
-        const e = localStorage.getItem('employeeData3');
+        const r = localStorage.getItem('chipRecords2');
+        const e = localStorage.getItem('employeeData4');
         if (r) records = JSON.parse(r);
         if (e) {
             employeeData = JSON.parse(e);
