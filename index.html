@@ -193,13 +193,28 @@
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.12);
         }
-        .action-receive { background: #f0fff4; border-color: #34a853; }
-        .action-return { background: #fff0f0; border-color: #f5576c; }
-        .action-card .action-icon { font-size: 40px; margin-bottom: 10px; }
-        .action-card .action-title { font-size: 1.6em; font-weight: 800; margin-bottom: 6px; }
+        .action-receive {
+            background: #f0fff4;
+            border-color: #34a853;
+        }
+        .action-return {
+            background: #fff0f0;
+            border-color: #f5576c;
+        }
+        .action-card .action-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        .action-card .action-title {
+            font-size: 1.6em;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
         .action-receive .action-title { color: #34a853; }
         .action-return .action-title { color: #f5576c; }
-        .action-card .action-desc { font-size: 0.95em; }
+        .action-card .action-desc {
+            font-size: 0.95em;
+        }
         .action-receive .action-desc { color: #34a853; }
         .action-return .action-desc { color: #f5576c; }
 
@@ -225,76 +240,326 @@
             font-family: inherit;
         }
         .search-section input:focus { border-color: #4a90d9; outline: none; }
-        .search-result { font-size: 0.9em; color: #666; padding: 6px 14px; background: #f0f7ff; border-radius: 8px; }
+        .search-result {
+            font-size: 0.9em;
+            color: #666;
+            padding: 6px 14px;
+            background: #f0f7ff;
+            border-radius: 8px;
+        }
 
         /* ===== MODAL ===== */
-        .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; padding: 20px; }
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
         .modal-overlay.active { display: flex; }
-        .modal { background: white; border-radius: 20px; width: 100%; max-width: 550px; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
-        .modal-header { padding: 20px 24px; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: space-between; }
-        .modal-header h2 { font-size: 1.3em; color: #333; }
+        .modal {
+            background: white;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 550px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .modal-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .modal-header h2 {
+            font-size: 1.3em;
+            color: #333;
+        }
         .modal-header-receive h2 { color: #34a853; }
         .modal-header-return h2 { color: #f5576c; }
-        .modal-close { width: 36px; height: 36px; border-radius: 50%; border: none; background: #f0f0f0; font-size: 1.2em; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .modal-close {
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            border: none;
+            background: #f0f0f0;
+            font-size: 1.2em;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+        }
         .modal-close:hover { background: #e0e0e0; }
         .modal-body { padding: 24px; }
         .modal-body .form-group { margin-bottom: 16px; }
-        .modal-body label { display: block; font-weight: 600; color: #333; margin-bottom: 6px; font-size: 0.95em; }
-        .modal-body input, .modal-body select { width: 100%; padding: 11px 14px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; font-family: inherit; transition: border-color 0.3s; }
-        .modal-body input:focus, .modal-body select:focus { border-color: #4a90d9; outline: none; }
-        .modal-body input:disabled { background: #f5f5f5; color: #666; }
-        .badge-id-note { margin-top: 6px; padding: 8px 12px; background: #e3f2fd; border-radius: 8px; font-size: 0.82em; color: #1565c0; display: flex; align-items: center; gap: 6px; }
-        .badge-id-note .note-icon { font-size: 1.1em; }
-        .emp-found { margin-top: 8px; padding: 10px 14px; background: #d4edda; border-radius: 8px; font-size: 0.9em; color: #155724; display: none; }
-        .emp-found.error { background: #f8d7da; color: #721c24; }
+        .modal-body label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 6px;
+            font-size: 0.95em;
+        }
+        .modal-body input, .modal-body select {
+            width: 100%;
+            padding: 11px 14px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1em;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+        .modal-body input:focus, .modal-body select:focus {
+            border-color: #4a90d9;
+            outline: none;
+        }
+        .modal-body input:disabled {
+            background: #f5f5f5;
+            color: #666;
+        }
+        .badge-id-note {
+            margin-top: 6px;
+            padding: 8px 12px;
+            background: #e3f2fd;
+            border-radius: 8px;
+            font-size: 0.82em;
+            color: #1565c0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .badge-id-note .note-icon {
+            font-size: 1.1em;
+        }
+        .emp-found {
+            margin-top: 8px;
+            padding: 10px 14px;
+            background: #d4edda;
+            border-radius: 8px;
+            font-size: 0.9em;
+            color: #155724;
+            display: none;
+        }
+        .emp-found.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
         .qty-row { display: flex; gap: 10px; align-items: center; }
         .qty-row input { flex: 1; text-align: center; }
-        .qty-btn { width: 40px; height: 40px; border-radius: 10px; border: 2px solid #4a90d9; background: white; color: #4a90d9; font-size: 1.3em; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .qty-btn {
+            width: 40px; height: 40px;
+            border-radius: 10px;
+            border: 2px solid #4a90d9;
+            background: white;
+            color: #4a90d9;
+            font-size: 1.3em;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+        }
         .qty-btn:hover { background: #4a90d9; color: white; }
-        .btn-submit { width: 100%; padding: 14px; border: none; border-radius: 12px; font-size: 1.1em; font-weight: 700; cursor: pointer; transition: all 0.3s; font-family: inherit; margin-top: 10px; }
+
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: inherit;
+            margin-top: 10px;
+        }
         .btn-submit-receive { background: #34a853; color: white; }
         .btn-submit-receive:hover { background: #2d9249; transform: translateY(-2px); }
         .btn-submit-return { background: #f5576c; color: white; }
         .btn-submit-return:hover { background: #e0455a; transform: translateY(-2px); }
 
         /* ===== RECORDS TABLE ===== */
-        .records-section { background: white; border-radius: 16px; padding: 20px 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-bottom: 20px; }
-        .records-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 10px; }
-        .records-header h3 { font-size: 1.1em; color: #333; }
-        .records-actions { display: flex; gap: 10px; }
-        .btn-sm { padding: 8px 16px; border-radius: 8px; border: none; font-size: 0.85em; font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.2s; }
+        .records-section {
+            background: white;
+            border-radius: 16px;
+            padding: 20px 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            margin-bottom: 20px;
+        }
+        .records-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .records-header h3 {
+            font-size: 1.1em;
+            color: #333;
+        }
+        .records-actions {
+            display: flex;
+            gap: 10px;
+        }
+        .btn-sm {
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: none;
+            font-size: 0.85em;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
         .btn-export { background: #4a90d9; color: white; }
         .btn-export:hover { background: #3a7bc8; }
         .btn-clear { background: #f5576c; color: white; }
         .btn-clear:hover { background: #e0455a; }
-        .filter-tabs { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
-        .filter-tab { padding: 6px 16px; border-radius: 20px; border: 2px solid #e0e0e0; background: white; font-size: 0.85em; font-weight: 600; cursor: pointer; transition: all 0.2s; font-family: inherit; }
+
+        /* Filter tabs */
+        .filter-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+        }
+        .filter-tab {
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 2px solid #e0e0e0;
+            background: white;
+            font-size: 0.85em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
         .filter-tab:hover { border-color: #4a90d9; }
         .filter-tab.active { background: #4a90d9; color: white; border-color: #4a90d9; }
-        table { width: 100%; border-collapse: collapse; }
-        th { background: #f8f9fa; padding: 12px 10px; text-align: left; font-size: 0.85em; color: #555; border-bottom: 2px solid #e0e0e0; }
-        td { padding: 10px; border-bottom: 1px solid #f0f0f0; font-size: 0.88em; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th {
+            background: #f8f9fa;
+            padding: 12px 10px;
+            text-align: left;
+            font-size: 0.85em;
+            color: #555;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.88em;
+        }
         tr:hover td { background: #f8fbff; }
-        .tag-return { display: inline-block; padding: 3px 10px; border-radius: 12px; background: #d4edda; color: #155724; font-size: 0.8em; font-weight: 600; }
-        .tag-pending { display: inline-block; padding: 3px 10px; border-radius: 12px; background: #fff3cd; color: #856404; font-size: 0.8em; font-weight: 600; }
-        .delete-btn { background: none; border: none; color: #dc3545; cursor: pointer; font-size: 1.1em; }
+        .tag-return {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            background: #d4edda;
+            color: #155724;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        .tag-pending {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            background: #fff3cd;
+            color: #856404;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        .delete-btn {
+            background: none;
+            border: none;
+            color: #dc3545;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
         .delete-btn:hover { color: #a71d2a; }
 
         /* ===== ALERT ===== */
-        .alert-toast { position: fixed; top: 20px; right: 20px; padding: 14px 24px; border-radius: 12px; color: white; font-weight: 600; z-index: 2000; display: none; animation: slideIn 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2); max-width: 400px; }
+        .alert-toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 14px 24px;
+            border-radius: 12px;
+            color: white;
+            font-weight: 600;
+            z-index: 2000;
+            display: none;
+            animation: slideIn 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            max-width: 400px;
+        }
         .alert-toast.success { background: #34a853; }
         .alert-toast.error { background: #dc3545; }
         .alert-toast.warning { background: #ffc107; color: #333; }
         .alert-toast.info { background: #4a90d9; }
         @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-        .empty-state { text-align: center; padding: 40px 20px; color: #999; }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999;
+        }
         .empty-state .empty-icon { font-size: 48px; margin-bottom: 10px; }
-        .progress-section { background: white; border-radius: 16px; padding: 16px 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-bottom: 20px; }
-        .progress-bar-wrap { background: #e9ecef; border-radius: 10px; height: 24px; overflow: hidden; position: relative; margin-top: 10px; }
-        .progress-bar-fill { height: 100%; border-radius: 10px; transition: width 0.5s ease; display: flex; align-items: center; justify-content: center; font-size: 0.75em; font-weight: 700; color: white; }
+
+        /* Progress bar */
+        .progress-section {
+            background: white;
+            border-radius: 16px;
+            padding: 16px 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            margin-bottom: 20px;
+        }
+        .progress-bar-wrap {
+            background: #e9ecef;
+            border-radius: 10px;
+            height: 24px;
+            overflow: hidden;
+            position: relative;
+            margin-top: 10px;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75em;
+            font-weight: 700;
+            color: white;
+        }
         .progress-receive { background: linear-gradient(90deg, #34a853, #4caf50); }
-        .progress-labels { display: flex; justify-content: space-between; margin-top: 6px; font-size: 0.8em; color: #666; }
-        .col-info { display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; background: #fff3e0; border-radius: 6px; font-size: 0.78em; color: #e65100; font-weight: 600; margin-left: 8px; }
+        .progress-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 6px;
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        /* Column info badge */
+        .col-info {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 10px;
+            background: #fff3e0;
+            border-radius: 6px;
+            font-size: 0.78em;
+            color: #e65100;
+            font-weight: 600;
+            margin-left: 8px;
+        }
 
         @media (max-width: 768px) {
             .stats-row { grid-template-columns: repeat(2, 1fr); }
@@ -308,6 +573,7 @@
 <body>
 
 <div class="container">
+    <!-- HEADER -->
     <div class="header">
         <div class="header-icon">🐟</div>
         <div class="header-text">
@@ -320,19 +586,43 @@
         </div>
     </div>
 
+    <!-- STATS -->
     <div class="stats-row">
-        <div class="stat-card"><div class="stat-icon">👥</div><div class="stat-number" id="statTotal">250</div><div class="stat-label">ของทั้งหมด</div></div>
-        <div class="stat-card"><div class="stat-icon">📦</div><div class="stat-number" id="statReceived">0</div><div class="stat-label">ชิพรับแล้ว</div></div>
-        <div class="stat-card"><div class="stat-icon">🔄</div><div class="stat-number" id="statReturned">0</div><div class="stat-label">คืนของแล้ว</div></div>
-        <div class="stat-card"><div class="stat-icon">⏳</div><div class="stat-number" id="statPending">0</div><div class="stat-label">ยังไม่คืน</div></div>
+        <div class="stat-card">
+            <div class="stat-icon">👥</div>
+            <div class="stat-number" id="statTotal">250</div>
+            <div class="stat-label">ของทั้งหมด</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">📦</div>
+            <div class="stat-number" id="statReceived">0</div>
+            <div class="stat-label">ชิพรับแล้ว</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">🔄</div>
+            <div class="stat-number" id="statReturned">0</div>
+            <div class="stat-label">คืนของแล้ว</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">⏳</div>
+            <div class="stat-number" id="statPending">0</div>
+            <div class="stat-label">ยังไม่คืน</div>
+        </div>
     </div>
 
+    <!-- PROGRESS -->
     <div class="progress-section">
         <div class="section-label">📊 สถานะการแจกของ (250 ชิ้น)</div>
-        <div class="progress-bar-wrap"><div class="progress-bar-fill progress-receive" id="progressBar" style="width: 0%">0%</div></div>
-        <div class="progress-labels"><span>ชิพรับ: <strong id="progReceived">0</strong>/250</span><span>คืนแล้ว: <strong id="progReturned">0</strong> | ยังไม่คืน: <strong id="progPending">0</strong></span></div>
+        <div class="progress-bar-wrap">
+            <div class="progress-bar-fill progress-receive" id="progressBar" style="width: 0%">0%</div>
+        </div>
+        <div class="progress-labels">
+            <span>ชิพรับ: <strong id="progReceived">0</strong>/250</span>
+            <span>คืนแล้ว: <strong id="progReturned">0</strong> | ยังไม่คืน: <strong id="progPending">0</strong></span>
+        </div>
     </div>
 
+    <!-- UPLOAD & DATE -->
     <div class="info-row">
         <div class="upload-section">
             <div class="section-label">📁 อัปโหลดข้อมูลพนักงาน</div>
@@ -350,17 +640,28 @@
         </div>
     </div>
 
+    <!-- ACTION BUTTONS -->
     <div class="action-row">
-        <div class="action-card action-receive" onclick="openModal('receive')"><div class="action-icon">📦</div><div class="action-title">ชิพรับของ</div><div class="action-desc">กดเพื่อบันทึกพนักงานชิพรับของ</div></div>
-        <div class="action-card action-return" onclick="openModal('return')"><div class="action-icon">🔄</div><div class="action-title">คืนของ</div><div class="action-desc">กดเพื่อบันทึกพนักงานคืนของ</div></div>
+        <div class="action-card action-receive" onclick="openModal('receive')">
+            <div class="action-icon">📦</div>
+            <div class="action-title">ชิพรับของ</div>
+            <div class="action-desc">กดเพื่อบันทึกพนักงานชิพรับของ</div>
+        </div>
+        <div class="action-card action-return" onclick="openModal('return')">
+            <div class="action-icon">🔄</div>
+            <div class="action-title">คืนของ</div>
+            <div class="action-desc">กดเพื่อบันทึกพนักงานคืนของ</div>
+        </div>
     </div>
 
+    <!-- SEARCH -->
     <div class="search-section">
         <span style="font-weight:700; color:#333;">🔍 ค้นหาพนักงาน:</span>
         <input type="text" id="searchInput" placeholder="พิมพ์ Badge ID หรือชื่อ เพื่อเช็คสถานะ...">
         <div class="search-result" id="searchResult" style="display:none;"></div>
     </div>
 
+    <!-- RECORDS -->
     <div class="records-section">
         <div class="records-header">
             <h3>📋 รายการบันทึกทั้งหมด</h3>
@@ -377,14 +678,31 @@
         </div>
         <div style="overflow-x:auto;">
             <table>
-                <thead><tr><th>#</th><th>สถานะ</th><th>Badge ID</th><th>ชื่อ</th><th>Function</th><th>จำนวน</th><th>วันที่ชิพรับ</th><th>วันที่คืน</th><th></th></tr></thead>
-                <tbody id="recordsBody"></tbody>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>สถานะ</th>
+                        <th>Badge ID</th>
+                        <th>ชื่อ</th>
+                        <th>Function</th>
+                        <th>จำนวน</th>
+                        <th>วันที่ชิพรับ</th>
+                        <th>วันที่คืน</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="recordsBody">
+                </tbody>
             </table>
-            <div class="empty-state" id="emptyState"><div class="empty-icon">📭</div><p>ยังไม่มีรายการบันทึก</p></div>
+            <div class="empty-state" id="emptyState">
+                <div class="empty-icon">📭</div>
+                <p>ยังไม่มีรายการบันทึก</p>
+            </div>
         </div>
     </div>
 </div>
 
+<!-- MODAL -->
 <div class="modal-overlay" id="modalOverlay">
     <div class="modal">
         <div class="modal-header" id="modalHeaderDiv">
@@ -395,156 +713,515 @@
             <div class="form-group">
                 <label>Badge ID * (สแกนบัตรหรือกรอกมือ) <span class="col-info">📋 Column A</span></label>
                 <input type="text" id="empId" placeholder="สแกน Badge ID ที่นี่..." autofocus>
-                <div class="badge-id-note"><span class="note-icon">💳</span><span>สแกนบัตรพนักงาน → ระบบจะดึงข้อมูลจาก Column A ในไฟล์อัตโนมัติ</span></div>
+                <div class="badge-id-note">
+                    <span class="note-icon">💳</span>
+                    <span>สแกนบัตรพนักงาน → ระบบจะดึงข้อมูลจาก Column A ในไฟล์อัตโนมัติ</span>
+                </div>
                 <div class="emp-found" id="empFound"></div>
             </div>
-            <div class="form-group"><label>Function</label><input type="text" id="empFunction" disabled placeholder="อัตโนมัติจาก Badge ID"></div>
-            <div class="form-group"><label>ชื่อพนักงาน</label><input type="text" id="empName" disabled placeholder="อัตโนมัติจาก Badge ID"></div>
+            <div class="form-group">
+                <label>Function</label>
+                <input type="text" id="empFunction" disabled placeholder="อัตโนมัติจาก Badge ID">
+            </div>
+            <div class="form-group">
+                <label>ชื่อพนักงาน</label>
+                <input type="text" id="empName" disabled placeholder="อัตโนมัติจาก Badge ID">
+            </div>
             <div class="form-group">
                 <label>จำนวนของ *</label>
-                <div class="qty-row"><button class="qty-btn" onclick="changeQty(-1)">−</button><input type="number" id="prizeQuantity" value="1" min="1"><button class="qty-btn" onclick="changeQty(1)">+</button></div>
+                <div class="qty-row">
+                    <button class="qty-btn" onclick="changeQty(-1)">−</button>
+                    <input type="number" id="prizeQuantity" value="1" min="1">
+                    <button class="qty-btn" onclick="changeQty(1)">+</button>
+                </div>
             </div>
+
             <button class="btn-submit" id="btnSubmit" onclick="submitRecord()">✅ บันทึกชิพรับของ</button>
         </div>
     </div>
 </div>
 
+<!-- ALERT TOAST -->
 <div class="alert-toast" id="alertToast"></div>
 
 <script>
     const TOTAL_ITEMS = 250;
-    let employeeData = [];
+
+    let employeeData = []; // { badgeId (ColA), function, name }
     let records = [];
     let currentMode = 'receive';
     let currentFilter = 'all';
 
-    window.onload = function() { loadFromLocalStorage(); setTodayDate(); updateStats(); displayRecords(); };
+    window.onload = function() {
+        loadFromLocalStorage();
+        setTodayDate();
+        updateStats();
+        displayRecords();
+    };
 
-    function setTodayDate() { const today = new Date(); const dateInput = document.getElementById('recordDate'); dateInput.value = today.toISOString().split('T')[0]; updateThaiDate(); dateInput.addEventListener('change', updateThaiDate); }
-    function updateThaiDate() { const dateInput = document.getElementById('recordDate'); if (dateInput.value) { const d = new Date(dateInput.value); document.getElementById('dateThai').textContent = String(d.getDate()).padStart(2,'0') + '/' + String(d.getMonth()+1).padStart(2,'0') + '/' + (d.getFullYear()+543); } }
-    function getThaiDate(dateStr) { if (!dateStr) return ''; const d = new Date(dateStr); return String(d.getDate()).padStart(2,'0') + '/' + String(d.getMonth()+1).padStart(2,'0') + '/' + (d.getFullYear()+543); }
+    function setTodayDate() {
+        const today = new Date();
+        const dateInput = document.getElementById('recordDate');
+        dateInput.value = today.toISOString().split('T')[0];
+        updateThaiDate();
+        dateInput.addEventListener('change', updateThaiDate);
+    }
 
+    function updateThaiDate() {
+        const dateInput = document.getElementById('recordDate');
+        if (dateInput.value) {
+            const d = new Date(dateInput.value);
+            const thaiYear = d.getFullYear() + 543;
+            const day = String(d.getDate()).padStart(2, '0');
+            const month = String(d.getMonth() + 1).padStart(2, '0');
+            document.getElementById('dateThai').textContent = day + '/' + month + '/' + thaiYear;
+        }
+    }
+
+    function getThaiDate(dateStr) {
+        if (!dateStr) return '';
+        const d = new Date(dateStr);
+        const thaiYear = d.getFullYear() + 543;
+        const day = String(d.getDate()).padStart(2, '0');
+        const month = String(d.getMonth() + 1).padStart(2, '0');
+        return day + '/' + month + '/' + thaiYear;
+    }
+
+    // ===== FILE UPLOAD =====
+    // Column A = Badge ID, Column B = Function/Dept, Column C = Name
     document.getElementById('fileInput').addEventListener('change', function(e) {
-        const file = e.target.files[0]; if (!file) return;
+        const file = e.target.files[0];
+        if (!file) return;
         const reader = new FileReader();
         reader.onload = function(e) {
             try {
-                const data = new Uint8Array(e.target.result); const wb = XLSX.read(data, {type:'array'}); const ws = wb.Sheets[wb.SheetNames[0]];
-                const rawData = XLSX.utils.sheet_to_json(ws, {header:1, raw:false, defval:''});
-                if (rawData.length < 2) { showToast('error','ไม่พบข้อมูลในไฟล์'); return; }
-                const headers = rawData[0]; let badgeCol=0, functionCol=-1, nameCol=-1;
-                headers.forEach((h,i) => { const hh=String(h).trim().toLowerCase(); if(i===0) return; if(functionCol===-1 && (hh.includes('function')||hh.includes('department')||hh.includes('dept')||hh.includes('แผนก'))) functionCol=i; else if(nameCol===-1 && (hh.includes('name')||hh.includes('ชื่อ'))) nameCol=i; });
-                if(functionCol===-1) functionCol=1; if(nameCol===-1) nameCol=2;
+                const data = new Uint8Array(e.target.result);
+                const wb = XLSX.read(data, { type: 'array' });
+                const ws = wb.Sheets[wb.SheetNames[0]];
+                const rawData = XLSX.utils.sheet_to_json(ws, { header: 1, raw: false, defval: '' });
+                if (rawData.length < 2) { showToast('error', 'ไม่พบข้อมูลในไฟล์'); return; }
+
+                // Column A (index 0) = Badge ID (ใช้สแกนบัตร)
+                // ค้นหา Column อื่นๆ จาก Header
+                const headers = rawData[0];
+                let badgeCol = 0; // Always Column A = Badge ID
+                let functionCol = -1;
+                let nameCol = -1;
+                let engNameCol = -1;
+
+                headers.forEach((h, i) => {
+                    const hh = String(h).trim().toLowerCase();
+                    if (hh.includes('function') || hh.includes('department') || hh.includes('dept') || hh.includes('แผนก')) {
+                        functionCol = i;
+                    } else if (nameCol === -1 && (hh === 'name' || hh.includes('ชื่อ') || hh === 'c')) {
+                        nameCol = i;
+                    } else if (hh.includes('eng name') || hh.includes('eng_name') || hh.includes('english name')) {
+                        engNameCol = i;
+                    }
+                });
+
+                // Fallback: ถ้าไม่เจอ header ให้ใช้ตำแหน่งตามโครงสร้างไฟล์
+                // A=Badge-ID, B=Emp-ID, C=Name, D=Eng Name, E=Function
+                if (functionCol === -1) functionCol = 4; // Column E
+                if (nameCol === -1) nameCol = 2; // Column C
+
                 employeeData = [];
-                for(let i=1;i<rawData.length;i++) { const row=rawData[i]; if(!row||!row[badgeCol]) continue; const id=normalizeBadgeId(row[badgeCol]); if(!id) continue; employeeData.push({badgeId:id, function:String(row[functionCol]||'').trim(), name:String(row[nameCol]||'').trim()}); }
-                if(employeeData.length>0) { saveToLocalStorage(); const n=document.getElementById('uploadNote'); n.textContent='✅ โหลดสำเร็จ: '+employeeData.length+' คน ('+file.name+')'; n.className='upload-note success'; showToast('success','โหลดข้อมูลสำเร็จ! พบพนักงาน '+employeeData.length+' คน (Badge ID = Column A)'); } else { showToast('error','ไม่พบข้อมูลพนักงาน'); }
-            } catch(err) { showToast('error','เกิดข้อผิดพลาด: '+err.message); }
-        }; reader.readAsArrayBuffer(file);
+                for (let i = 1; i < rawData.length; i++) {
+                    const row = rawData[i];
+                    if (!row || !row[badgeCol]) continue;
+                    const id = normalizeBadgeId(row[badgeCol]);
+                    if (!id) continue;
+                    employeeData.push({ 
+                        badgeId: id, 
+                        function: String(row[functionCol]||'').trim(), 
+                        name: String(row[nameCol]||'').trim() 
+                    });
+                }
+
+                if (employeeData.length > 0) {
+                    saveToLocalStorage();
+                    const noteEl = document.getElementById('uploadNote');
+                    noteEl.textContent = '✅ โหลดสำเร็จ: ' + employeeData.length + ' คน (' + file.name + ')';
+                    noteEl.className = 'upload-note success';
+                    showToast('success', 'โหลดข้อมูลสำเร็จ! พบพนักงาน ' + employeeData.length + ' คน (Badge ID = Column A)');
+                } else {
+                    showToast('error', 'ไม่พบข้อมูลพนักงาน');
+                }
+            } catch(err) { showToast('error', 'เกิดข้อผิดพลาด: ' + err.message); }
+        };
+        reader.readAsArrayBuffer(file);
     });
 
     function loadSampleData() {
-        const functions=['Production','Quality','Engineering','Maintenance','Warehouse','HR','Finance','IT','Safety','Planning'];
-        const firstNames=['สมชาย','สมหญิง','วิชัย','วิภา','อนุชา','อรุณ','พิชัย','พิมพ์','กิตติ','กานดา','ธนา','ธิดา','ปรีชา','ประภา','สุชาติ','สุภา','มานะ','มาลี','วิรัช','วารี'];
-        const lastNames=['สุขใจ','ดีมาก','รักงาน','ใจดี','เก่งมาก','สว่าง','พัฒนา','ก้าวหน้า','มั่นคง','สำเร็จ','ร่ำรวย','มีสุข','เจริญ','รุ่งเรือง','ยิ่งใหญ่'];
-        employeeData=[]; for(let i=0;i<300;i++) { employeeData.push({badgeId:String(4600001+i), function:functions[Math.floor(Math.random()*functions.length)], name:firstNames[Math.floor(Math.random()*firstNames.length)]+' '+lastNames[Math.floor(Math.random()*lastNames.length)]}); }
-        saveToLocalStorage(); const n=document.getElementById('uploadNote'); n.textContent='✅ โหลดข้อมูลตัวอย่าง 300 คน สำเร็จ'; n.className='upload-note success'; showToast('success','โหลดข้อมูลตัวอย่าง 300 คน สำเร็จ!');
-    }
+        const functions = ['Production', 'Quality', 'Engineering', 'Maintenance', 'Warehouse', 'HR', 'Finance', 'IT', 'Safety', 'Planning'];
+        const firstNames = ['สมชาย', 'สมหญิง', 'วิชัย', 'วิภา', 'อนุชา', 'อรุณ', 'พิชัย', 'พิมพ์', 'กิตติ', 'กานดา', 'ธนา', 'ธิดา', 'ปรีชา', 'ประภา', 'สุชาติ', 'สุภา', 'มานะ', 'มาลี', 'วิรัช', 'วารี'];
+        const lastNames = ['สุขใจ', 'ดีมาก', 'รักงาน', 'ใจดี', 'เก่งมาก', 'สว่าง', 'พัฒนา', 'ก้าวหน้า', 'มั่นคง', 'สำเร็จ', 'ร่ำรวย', 'มีสุข', 'เจริญ', 'รุ่งเรือง', 'ยิ่งใหญ่'];
 
-    function normalizeBadgeId(v) { return String(v||'').trim().replace(/\s+/g,''); }
-
-    document.getElementById('searchInput').addEventListener('input', function() {
-        const query=this.value.trim().toLowerCase(); const resultEl=document.getElementById('searchResult');
-        if(!query) { resultEl.style.display='none'; return; }
-        const found=records.filter(r=>r.badgeId.toLowerCase().includes(query)||r.empName.toLowerCase().includes(query));
-        if(found.length>0) { const received=found.filter(r=>r.status==='received').length; const returned=found.filter(r=>r.status==='returned').length; resultEl.innerHTML='🔍 พบ <strong>'+found.length+'</strong> รายการ | ชิพรับ: <strong>'+(received+returned)+'</strong> | คืนแล้ว: <strong>'+returned+'</strong> | ยังไม่คืน: <strong>'+received+'</strong>'; resultEl.style.display='block'; }
-        else { resultEl.innerHTML='❌ ไม่พบข้อมูล'; resultEl.style.display='block'; }
-    });
-
-    function openModal(mode) {
-        if(employeeData.length===0) { showToast('warning','กรุณาโหลดข้อมูลพนักงานก่อน'); return; }
-        currentMode=mode; document.getElementById('modalOverlay').classList.add('active');
-        const headerDiv=document.getElementById('modalHeaderDiv'); const btn=document.getElementById('btnSubmit');
-        if(mode==='receive') { document.getElementById('modalTitle').textContent='📦 ชิพรับของ'; headerDiv.className='modal-header modal-header-receive'; btn.textContent='✅ บันทึกชิพรับของ'; btn.className='btn-submit btn-submit-receive'; const totalOut=records.filter(r=>r.status==='received').reduce((s,r)=>s+r.quantity,0); if(totalOut>=TOTAL_ITEMS) showToast('warning','⚠️ ของ 250 ชิ้นถูกชิพรับหมดแล้ว!'); }
-        else { document.getElementById('modalTitle').textContent='🔄 คืนของ'; headerDiv.className='modal-header modal-header-return'; btn.textContent='✅ บันทึกคืนของ'; btn.className='btn-submit btn-submit-return'; }
-        document.getElementById('prizeQuantity').value=1; document.getElementById('empId').value=''; document.getElementById('empFunction').value=''; document.getElementById('empName').value=''; document.getElementById('empFound').style.display='none';
-        setTimeout(()=>document.getElementById('empId').focus(),100);
-    }
-    function closeModal() { document.getElementById('modalOverlay').classList.remove('active'); }
-
-    document.getElementById('empId').addEventListener('input', function() {
-        const id=normalizeBadgeId(this.value); const foundEl=document.getElementById('empFound');
-        if(!id) { document.getElementById('empFunction').value=''; document.getElementById('empName').value=''; foundEl.style.display='none'; return; }
-        const emp=employeeData.find(e=>e.badgeId===id);
-        if(emp) { document.getElementById('empFunction').value=emp.function; document.getElementById('empName').value=emp.name; foundEl.textContent='✅ พบ: '+emp.name+' ('+emp.function+')'; foundEl.className='emp-found'; foundEl.style.display='block'; }
-        else { document.getElementById('empFunction').value=''; document.getElementById('empName').value=''; if(id.length>=4) { foundEl.textContent='❌ ไม่พบ Badge ID: '+id+' (ตรวจสอบ Column A ในไฟล์)'; foundEl.className='emp-found error'; foundEl.style.display='block'; } else { foundEl.style.display='none'; } }
-    });
-
-    document.getElementById('empId').addEventListener('keypress', function(e) { if(e.key==='Enter') { e.preventDefault(); const id=normalizeBadgeId(this.value); const emp=employeeData.find(e=>e.badgeId===id); if(emp) submitRecord(); } });
-
-    function changeQty(delta) { const input=document.getElementById('prizeQuantity'); let val=parseInt(input.value)||1; val=Math.max(1,val+delta); input.value=val; }
-
-    function submitRecord() {
-        const badgeId=normalizeBadgeId(document.getElementById('empId').value); const empFunc=document.getElementById('empFunction').value.trim(); const empName=document.getElementById('empName').value.trim();
-        const qty=parseInt(document.getElementById('prizeQuantity').value); const dateValue=document.getElementById('recordDate').value; const thaiDate=getThaiDate(dateValue);
-        if(!badgeId) { showToast('error','กรุณาสแกน Badge ID หรือกรอกมือ'); return; }
-        if(!empFunc||!empName) { showToast('error','ไม่พบข้อมูลพนักงาน กรุณาตรวจสอบ Badge ID (Column A)'); return; }
-        if(!qty||qty<1) { showToast('error','จำนวนไม่ถูกต้อง'); return; }
-
-        if(currentMode==='receive') {
-            const totalOut=records.filter(r=>r.status==='received').reduce((s,r)=>s+r.quantity,0);
-            if(totalOut+qty>TOTAL_ITEMS) { showToast('error','❌ ของคงเหลือไม่พอ! (เหลือ '+(TOTAL_ITEMS-totalOut)+' ชิ้น)'); return; }
-            records.push({id:Date.now(), badgeId, empName, empFunction:empFunc, quantity:qty, receiveDate:thaiDate, receiveDateRaw:dateValue, returnDate:'', returnDateRaw:'', status:'received'});
-            showToast('success','✅ ชิพรับสำเร็จ! '+empName+' (Badge: '+badgeId+') รับ '+qty+' ชิ้น');
-        } else {
-            const pendingRecords=records.filter(r=>r.badgeId===badgeId&&r.status==='received');
-            if(pendingRecords.length===0) { showToast('error','❌ ไม่พบรายการที่ยังไม่คืนของ Badge ID: '+badgeId); return; }
-            let remaining=qty;
-            for(let i=0;i<pendingRecords.length&&remaining>0;i++) {
-                if(pendingRecords[i].quantity<=remaining) { remaining-=pendingRecords[i].quantity; pendingRecords[i].status='returned'; pendingRecords[i].returnDate=thaiDate; pendingRecords[i].returnDateRaw=dateValue; }
-                else { const originalQty=pendingRecords[i].quantity; pendingRecords[i].quantity=remaining; pendingRecords[i].status='returned'; pendingRecords[i].returnDate=thaiDate; pendingRecords[i].returnDateRaw=dateValue; records.push({id:Date.now()+1, badgeId, empName, empFunction:empFunc, quantity:originalQty-remaining, receiveDate:pendingRecords[i].receiveDate, receiveDateRaw:pendingRecords[i].receiveDateRaw, returnDate:'', returnDateRaw:'', status:'received'}); remaining=0; }
-            }
-            if(remaining>0) showToast('warning','⚠️ คืนได้บางส่วน (ยอมรับไม่เกินที่ชิพรับไว้)');
-            else showToast('success','✅ คืนของสำเร็จ! '+empName+' คืน '+qty+' ชิ้น (วันที่ '+thaiDate+')');
+        employeeData = [];
+        for (let i = 0; i < 300; i++) {
+            employeeData.push({
+                badgeId: String(4600001 + i),
+                function: functions[Math.floor(Math.random() * functions.length)],
+                name: firstNames[Math.floor(Math.random() * firstNames.length)] + ' ' + lastNames[Math.floor(Math.random() * lastNames.length)]
+            });
         }
-        saveToLocalStorage(); updateStats(); displayRecords(); closeModal();
+        saveToLocalStorage();
+        const noteEl = document.getElementById('uploadNote');
+        noteEl.textContent = '✅ โหลดข้อมูลตัวอย่าง 300 คน สำเร็จ';
+        noteEl.className = 'upload-note success';
+        showToast('success', 'โหลดข้อมูลตัวอย่าง 300 คน สำเร็จ!');
     }
 
-    function filterRecords(filter) { currentFilter=filter; document.querySelectorAll('.filter-tab').forEach(t=>t.className='filter-tab'); event.target.classList.add('filter-tab','active'); displayRecords(); }
+    function normalizeBadgeId(v) {
+        return String(v||'').trim().replace(/\s+/g,'');
+    }
 
+    // ===== SEARCH =====
+    document.getElementById('searchInput').addEventListener('input', function() {
+        const query = this.value.trim().toLowerCase();
+        const resultEl = document.getElementById('searchResult');
+        if (!query) { resultEl.style.display = 'none'; return; }
+
+        const found = records.filter(r => 
+            r.badgeId.toLowerCase().includes(query) || r.empName.toLowerCase().includes(query)
+        );
+
+        if (found.length > 0) {
+            const received = found.filter(r => r.status === 'received').length;
+            const returned = found.filter(r => r.status === 'returned').length;
+            resultEl.innerHTML = '🔍 พบ <strong>' + found.length + '</strong> รายการ | ชิพรับ: <strong>' + (received + returned) + '</strong> | คืนแล้ว: <strong>' + returned + '</strong> | ยังไม่คืน: <strong>' + received + '</strong>';
+            resultEl.style.display = 'block';
+        } else {
+            resultEl.innerHTML = '❌ ไม่พบข้อมูล';
+            resultEl.style.display = 'block';
+        }
+    });
+
+    // ===== MODAL =====
+    function openModal(mode) {
+        if (employeeData.length === 0) {
+            showToast('warning', 'กรุณาโหลดข้อมูลพนักงานก่อน');
+            return;
+        }
+        currentMode = mode;
+        document.getElementById('modalOverlay').classList.add('active');
+        
+        const headerDiv = document.getElementById('modalHeaderDiv');
+        const btn = document.getElementById('btnSubmit');
+
+
+        if (mode === 'receive') {
+            document.getElementById('modalTitle').textContent = '📦 ชิพรับของ';
+            headerDiv.className = 'modal-header modal-header-receive';
+            btn.textContent = '✅ บันทึกชิพรับของ';
+            btn.className = 'btn-submit btn-submit-receive';
+
+
+            const totalOut = records.filter(r => r.status === 'received').reduce((s,r) => s + r.quantity, 0);
+            if (totalOut >= TOTAL_ITEMS) {
+                showToast('warning', '⚠️ ของ 250 ชิ้นถูกชิพรับหมดแล้ว!');
+            }
+        } else {
+            document.getElementById('modalTitle').textContent = '🔄 คืนของ';
+            headerDiv.className = 'modal-header modal-header-return';
+            btn.textContent = '✅ บันทึกคืนของ';
+            btn.className = 'btn-submit btn-submit-return';
+
+        }
+
+        document.getElementById('prizeQuantity').value = 1;
+        document.getElementById('empId').value = '';
+        document.getElementById('empFunction').value = '';
+        document.getElementById('empName').value = '';
+        document.getElementById('empFound').style.display = 'none';
+
+
+        setTimeout(() => document.getElementById('empId').focus(), 100);
+    }
+
+    function closeModal() {
+        document.getElementById('modalOverlay').classList.remove('active');
+    }
+
+    // ===== BADGE ID AUTO FILL (สแกนบัตร → ดึงข้อมูลจาก Column A) =====
+    document.getElementById('empId').addEventListener('input', function() {
+        const id = normalizeBadgeId(this.value);
+        const foundEl = document.getElementById('empFound');
+        
+        if (!id) { 
+            document.getElementById('empFunction').value = ''; 
+            document.getElementById('empName').value = ''; 
+            foundEl.style.display = 'none';
+            return; 
+        }
+        
+        // ค้นหา Badge ID ที่ตรงกับ Column A ในไฟล์
+        const emp = employeeData.find(e => e.badgeId === id);
+        if (emp) {
+            document.getElementById('empFunction').value = emp.function;
+            document.getElementById('empName').value = emp.name;
+            foundEl.textContent = '✅ พบ: ' + emp.name + ' (' + emp.function + ')';
+            foundEl.className = 'emp-found';
+            foundEl.style.display = 'block';
+
+
+        } else {
+            document.getElementById('empFunction').value = '';
+            document.getElementById('empName').value = '';
+            if (id.length >= 4) {
+                foundEl.textContent = '❌ ไม่พบ Badge ID: ' + id + ' (ตรวจสอบ Column A ในไฟล์)';
+                foundEl.className = 'emp-found error';
+                foundEl.style.display = 'block';
+            } else {
+                foundEl.style.display = 'none';
+            }
+        }
+    });
+
+    // Support Enter key after scan
+    document.getElementById('empId').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            const id = normalizeBadgeId(this.value);
+            const emp = employeeData.find(e => e.badgeId === id);
+            if (emp && currentMode === 'receive') {
+                submitRecord();
+            }
+        }
+    });
+
+
+
+    // ===== QTY =====
+    function changeQty(delta) {
+        const input = document.getElementById('prizeQuantity');
+        let val = parseInt(input.value) || 1;
+        val = Math.max(1, val + delta);
+        input.value = val;
+    }
+
+    // ===== SUBMIT =====
+    function submitRecord() {
+        const badgeId = normalizeBadgeId(document.getElementById('empId').value);
+        const empFunc = document.getElementById('empFunction').value.trim();
+        const empName = document.getElementById('empName').value.trim();
+        const qty = parseInt(document.getElementById('prizeQuantity').value);
+        const dateValue = document.getElementById('recordDate').value;
+        const thaiDate = getThaiDate(dateValue);
+
+        if (!badgeId) { showToast('error', 'กรุณาสแกน Badge ID หรือกรอกมือ'); return; }
+        if (!empFunc || !empName) { showToast('error', 'ไม่พบข้อมูลพนักงาน กรุณาตรวจสอบ Badge ID (Column A)'); return; }
+        if (!qty || qty < 1) { showToast('error', 'จำนวนไม่ถูกต้อง'); return; }
+
+        if (currentMode === 'receive') {
+            // Check remaining stock
+            const totalOut = records.filter(r => r.status === 'received').reduce((s,r) => s + r.quantity, 0);
+            if (totalOut + qty > TOTAL_ITEMS) {
+                showToast('error', '❌ ของคงเหลือไม่พอ! (เหลือ ' + (TOTAL_ITEMS - totalOut) + ' ชิ้น)');
+                return;
+            }
+
+            records.push({
+                id: Date.now(),
+                badgeId, empName, empFunction: empFunc,
+                quantity: qty,
+                receiveDate: thaiDate,
+                receiveDateRaw: dateValue,
+                returnDate: '',
+                returnDateRaw: '',
+                status: 'received'
+            });
+
+            showToast('success', '✅ ชิพรับสำเร็จ! ' + empName + ' (Badge: ' + badgeId + ') รับ ' + qty + ' ชิ้น');
+        } else {
+            // Return mode - หาของที่ยังไม่คืนของ Badge ID นี้
+            const pendingRecords = records.filter(r => r.badgeId === badgeId && r.status === 'received');
+            if (pendingRecords.length === 0) {
+                showToast('error', '❌ ไม่พบรายการที่ยังไม่คืนของ Badge ID: ' + badgeId);
+                return;
+            }
+
+            // คืนตามจำนวนที่ระบุ (คืนจากรายการเก่าสุดก่อน)
+            let remaining = qty;
+            for (let i = 0; i < pendingRecords.length && remaining > 0; i++) {
+                if (pendingRecords[i].quantity <= remaining) {
+                    remaining -= pendingRecords[i].quantity;
+                    pendingRecords[i].status = 'returned';
+                    pendingRecords[i].returnDate = thaiDate;
+                    pendingRecords[i].returnDateRaw = dateValue;
+                } else {
+                    // แยก record: ส่วนที่คืน vs ส่วนที่เหลือ
+                    const originalQty = pendingRecords[i].quantity;
+                    pendingRecords[i].quantity = remaining;
+                    pendingRecords[i].status = 'returned';
+                    pendingRecords[i].returnDate = thaiDate;
+                    pendingRecords[i].returnDateRaw = dateValue;
+
+                    // สร้าง record ใหม่สำหรับส่วนที่ยังไม่คืน
+                    records.push({
+                        id: Date.now() + 1,
+                        badgeId, empName, empFunction: empFunc,
+                        quantity: originalQty - remaining,
+                        receiveDate: pendingRecords[i].receiveDate,
+                        receiveDateRaw: pendingRecords[i].receiveDateRaw,
+                        returnDate: '',
+                        returnDateRaw: '',
+                        status: 'received'
+                    });
+                    remaining = 0;
+                }
+            }
+
+            if (remaining > 0) {
+                showToast('warning', '⚠️ คืนได้บางส่วน (ยอมรับไม่เกินที่ชิพรับไว้)');
+            } else {
+                showToast('success', '✅ คืนของสำเร็จ! ' + empName + ' คืน ' + qty + ' ชิ้น (วันที่ ' + thaiDate + ')');
+            }
+        }
+
+        saveToLocalStorage();
+        updateStats();
+        displayRecords();
+        closeModal();
+    }
+
+    // ===== FILTER =====
+    function filterRecords(filter) {
+        currentFilter = filter;
+        document.querySelectorAll('.filter-tab').forEach(t => t.className = 'filter-tab');
+        event.target.classList.add('filter-tab', 'active');
+        displayRecords();
+    }
+
+    // ===== STATS =====
     function updateStats() {
-        const totalReceived=records.reduce((s,r)=>s+r.quantity,0); const totalReturned=records.filter(r=>r.status==='returned').reduce((s,r)=>s+r.quantity,0); const totalPending=records.filter(r=>r.status==='received').reduce((s,r)=>s+r.quantity,0);
-        document.getElementById('statTotal').textContent=TOTAL_ITEMS; document.getElementById('statReceived').textContent=totalReceived; document.getElementById('statReturned').textContent=totalReturned; document.getElementById('statPending').textContent=totalPending;
-        const pct=Math.round((totalReceived/TOTAL_ITEMS)*100); const bar=document.getElementById('progressBar'); bar.style.width=pct+'%'; bar.textContent=pct+'%';
-        document.getElementById('progReceived').textContent=totalReceived; document.getElementById('progReturned').textContent=totalReturned; document.getElementById('progPending').textContent=totalPending;
+        const totalReceived = records.reduce((s,r) => s + r.quantity, 0);
+        const totalReturned = records.filter(r => r.status === 'returned').reduce((s,r) => s + r.quantity, 0);
+        const totalPending = records.filter(r => r.status === 'received').reduce((s,r) => s + r.quantity, 0);
+
+        document.getElementById('statTotal').textContent = TOTAL_ITEMS;
+        document.getElementById('statReceived').textContent = totalReceived;
+        document.getElementById('statReturned').textContent = totalReturned;
+        document.getElementById('statPending').textContent = totalPending;
+
+        const pct = Math.round((totalReceived / TOTAL_ITEMS) * 100);
+        const bar = document.getElementById('progressBar');
+        bar.style.width = pct + '%';
+        bar.textContent = pct + '%';
+
+        document.getElementById('progReceived').textContent = totalReceived;
+        document.getElementById('progReturned').textContent = totalReturned;
+        document.getElementById('progPending').textContent = totalPending;
     }
 
+    // ===== DISPLAY =====
     function displayRecords() {
-        const tbody=document.getElementById('recordsBody'); const emptyState=document.getElementById('emptyState');
-        let filtered=records;
-        if(currentFilter==='receive') filtered=records.filter(r=>r.status==='received'||r.status==='returned');
-        if(currentFilter==='return') filtered=records.filter(r=>r.status==='returned');
-        if(currentFilter==='pending') filtered=records.filter(r=>r.status==='received');
-        if(filtered.length===0) { tbody.innerHTML=''; emptyState.style.display='block'; return; }
-        emptyState.style.display='none';
-        tbody.innerHTML=filtered.slice().reverse().map((r,i)=>{
-            const statusTag=r.status==='returned'?'<span class="tag-return">✅ คืนแล้ว</span>':'<span class="tag-pending">⏳ ยังไม่คืน</span>';
-            return '<tr><td>'+(filtered.length-i)+'</td><td>'+statusTag+'</td><td><strong>'+r.badgeId+'</strong></td><td>'+r.empName+'</td><td>'+r.empFunction+'</td><td>'+r.quantity+'</td><td>'+r.receiveDate+'</td><td>'+(r.returnDate||'<span style="color:#999">-</span>')+'</td><td><button class="delete-btn" onclick="deleteRecord('+r.id+')">🗑️</button></td></tr>';
+        const tbody = document.getElementById('recordsBody');
+        const emptyState = document.getElementById('emptyState');
+
+        let filtered = records;
+        if (currentFilter === 'receive') filtered = records.filter(r => r.status === 'received' || r.status === 'returned');
+        if (currentFilter === 'return') filtered = records.filter(r => r.status === 'returned');
+        if (currentFilter === 'pending') filtered = records.filter(r => r.status === 'received');
+
+        if (filtered.length === 0) {
+            tbody.innerHTML = '';
+            emptyState.style.display = 'block';
+            return;
+        }
+        emptyState.style.display = 'none';
+
+        tbody.innerHTML = filtered.slice().reverse().map((r, i) => {
+            let statusTag = '';
+            if (r.status === 'returned') {
+                statusTag = '<span class="tag-return">✅ คืนแล้ว</span>';
+            } else {
+                statusTag = '<span class="tag-pending">⏳ ยังไม่คืน</span>';
+            }
+
+            return '<tr>' +
+                '<td>' + (filtered.length - i) + '</td>' +
+                '<td>' + statusTag + '</td>' +
+                '<td><strong>' + r.badgeId + '</strong></td>' +
+                '<td>' + r.empName + '</td>' +
+                '<td>' + r.empFunction + '</td>' +
+                '<td>' + r.quantity + '</td>' +
+                '<td>' + r.receiveDate + '</td>' +
+                '<td>' + (r.returnDate || '<span style="color:#999">-</span>') + '</td>' +
+                '<td><button class="delete-btn" onclick="deleteRecord(' + r.id + ')">🗑️</button></td>' +
+                '</tr>';
         }).join('');
     }
 
-    function deleteRecord(id) { if(!confirm('ลบรายการนี้?')) return; records=records.filter(r=>r.id!==id); saveToLocalStorage(); updateStats(); displayRecords(); showToast('success','ลบสำเร็จ'); }
-    function clearAllRecords() { if(!confirm('⚠️ ล้างข้อมูลทั้งหมด?')) return; records=[]; saveToLocalStorage(); updateStats(); displayRecords(); showToast('success','ล้างข้อมูลสำเร็จ'); }
-
-    function exportToExcel() {
-        if(records.length===0) { showToast('error','ไม่มีข้อมูลให้ Export'); return; }
-        const data=records.map((r,i)=>({'ลำดับ':i+1,'สถานะ':r.status==='returned'?'คืนแล้ว':'ยังไม่คืน','Badge ID':r.badgeId,'ชื่อ':r.empName,'Function':r.empFunction,'จำนวน':r.quantity,'วันที่ชิพรับ':r.receiveDate,'วันที่คืน':r.returnDate||'-'}));
-        const ws=XLSX.utils.json_to_sheet(data); const wb=XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb,ws,'Records'); XLSX.writeFile(wb,'ChipRab_Records_'+new Date().toISOString().split('T')[0]+'.xlsx'); showToast('success','Export สำเร็จ!');
+    function deleteRecord(id) {
+        if (!confirm('ลบรายการนี้?')) return;
+        records = records.filter(r => r.id !== id);
+        saveToLocalStorage();
+        updateStats();
+        displayRecords();
+        showToast('success', 'ลบสำเร็จ');
     }
 
-    function showToast(type,msg) { const toast=document.getElementById('alertToast'); toast.className='alert-toast '+type; toast.textContent=msg; toast.style.display='block'; setTimeout(()=>toast.style.display='none',4000); }
-    function saveToLocalStorage() { localStorage.setItem('chipRecords',JSON.stringify(records)); localStorage.setItem('employeeData3',JSON.stringify(employeeData)); }
-    function loadFromLocalStorage() { const r=localStorage.getItem('chipRecords'); const e=localStorage.getItem('employeeData3'); if(r) records=JSON.parse(r); if(e) { employeeData=JSON.parse(e); if(employeeData.length>0) { const n=document.getElementById('uploadNote'); n.textContent='✅ มีข้อมูลพนักงาน '+employeeData.length+' คน (Badge ID = Column A)'; n.className='upload-note success'; } } }
-    document.getElementById('modalOverlay').addEventListener('click', function(e) { if(e.target===this) closeModal(); });
+    function clearAllRecords() {
+        if (!confirm('⚠️ ล้างข้อมูลทั้งหมด? การกระทำนี้ไม่สามารถย้อนกลับได้')) return;
+        records = [];
+        saveToLocalStorage();
+        updateStats();
+        displayRecords();
+        showToast('success', 'ล้างข้อมูลสำเร็จ');
+    }
+
+    function exportToExcel() {
+        if (records.length === 0) { showToast('error', 'ไม่มีข้อมูลให้ Export'); return; }
+        const data = records.map((r, i) => ({
+            'ลำดับ': i + 1,
+            'สถานะ': r.status === 'returned' ? 'คืนแล้ว' : 'ยังไม่คืน',
+            'Badge ID': r.badgeId,
+            'ชื่อ': r.empName,
+            'Function': r.empFunction,
+            'จำนวน': r.quantity,
+            'วันที่ชิพรับ': r.receiveDate,
+            'วันที่คืน': r.returnDate || '-'
+        }));
+        const ws = XLSX.utils.json_to_sheet(data);
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, 'Records');
+        XLSX.writeFile(wb, 'ChipRab_Records_' + new Date().toISOString().split('T')[0] + '.xlsx');
+        showToast('success', 'Export สำเร็จ!');
+    }
+
+    // ===== TOAST =====
+    function showToast(type, msg) {
+        const toast = document.getElementById('alertToast');
+        toast.className = 'alert-toast ' + type;
+        toast.textContent = msg;
+        toast.style.display = 'block';
+        setTimeout(() => toast.style.display = 'none', 4000);
+    }
+
+    // ===== STORAGE =====
+    function saveToLocalStorage() {
+        localStorage.setItem('chipRecords', JSON.stringify(records));
+        localStorage.setItem('employeeData3', JSON.stringify(employeeData));
+    }
+    function loadFromLocalStorage() {
+        const r = localStorage.getItem('chipRecords');
+        const e = localStorage.getItem('employeeData3');
+        if (r) records = JSON.parse(r);
+        if (e) {
+            employeeData = JSON.parse(e);
+            if (employeeData.length > 0) {
+                const noteEl = document.getElementById('uploadNote');
+                noteEl.textContent = '✅ มีข้อมูลพนักงาน ' + employeeData.length + ' คน (Badge ID = Column A)';
+                noteEl.className = 'upload-note success';
+            }
+        }
+    }
+
+    // Close modal on overlay click
+    document.getElementById('modalOverlay').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+    });
 </script>
 </body>
 </html>
